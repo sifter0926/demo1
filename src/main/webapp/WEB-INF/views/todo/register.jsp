@@ -13,7 +13,21 @@
 <body>
 <h2>Register Page</h2>
 <form action="/todo/register" method="post">
-  <button type="submit">Post 요청</button>
+    <div>
+    Title:<input type="text" name="title">
+    </div>
+    <div>
+        dueDate:<input type="date" name="dueDate">
+    </div>
+    <div>
+        Writer:<input type="text" name="writer">
+    </div>
+    <div>
+        Finished:<input type="checkbox" name="finished">
+    </div>
+    <div>
+        <button type="submit">Post 요청</button>
+    </div>
 </form>
 </body>
 </html>

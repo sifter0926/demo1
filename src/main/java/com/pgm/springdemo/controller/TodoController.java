@@ -1,11 +1,10 @@
 package com.pgm.springdemo.controller;
 
+import com.pgm.springdemo.dto.TodoDTO;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @Log4j2
@@ -22,11 +21,13 @@ public class TodoController {
     @GetMapping("/register")
     public void registerGet() {
         log.info("registerGet");
+
     }
     //@RequestMapping(value = "/register", method = RequestMethod.POST)
     @PostMapping("/register")
-    public String registerPost() {
+    public String registerPost(@ModelAttribute TodoDTO todoDTO, Model model) {
         log.info("registerPost");
-        return "/todo/list";
+        //model.addAttribute("dto",todoDTO);
+        return "redirect:/todo/list";
     }
 }
